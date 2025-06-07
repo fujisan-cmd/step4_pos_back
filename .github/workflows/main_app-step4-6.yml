@@ -9,13 +9,6 @@ on:
       - main
   workflow_dispatch:
 
-env:
-  DB_HOST: ${{secrets.DB_HOST}}
-  DB_USER: ${{secrets.DB_USER}}
-  DB_PORT: ${{secrets.DB_PORT}}
-  DB_PASSWORD: ${{secrets.DB_PASSWORD}}
-  DB_NAME: ${{secrets.DB_NAME}}
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -68,4 +61,4 @@ jobs:
           app-name: 'app-step4-6'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5BD436C84BC8491AA4B498C012FE1923 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_614F377B205F486C9D924DA08FB4B892 }}
