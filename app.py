@@ -3,10 +3,7 @@ from fastapi import FastAPI, HTTPException, Query, Header, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import Body
 import math
-import json
-import os
 from pydantic import BaseModel
-import pymysql
 
 import crud
 

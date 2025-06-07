@@ -1,4 +1,3 @@
-import json
 import sqlalchemy
 from sqlalchemy import VARCHAR, Integer, TIMESTAMP, CHAR, insert, delete, update, select, ForeignKey
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, sessionmaker
