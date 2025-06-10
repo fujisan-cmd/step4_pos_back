@@ -39,21 +39,21 @@ def myselect(mytable, code):
     Session = sessionmaker(bind=engine)
     session = Session()
 
+    query = select(mytable).where(mytable.CODE == code)
+
     try:
         with session.begin():
-            result = session.query(mytable).filter(mytable.CODE == code).first()
+            result = session.execute(query).scalar_one_or_none()
         
         if result is None:
             session.close()
             return None
-            # return json.dumps({'error': '該当する商品が存在しません。'})
         result_dict = {
             'product_id': result.PRD_ID,
             'code': result.CODE,
             'name': result.NAME,
             'price': result.PRICE
         }
-        # result_json = json.dumps(result_dict, ensure_ascii=False)
     except sqlalchemy.exc.IntegrityError:
         print("一意制約違反により、挿入に失敗しました")
 
